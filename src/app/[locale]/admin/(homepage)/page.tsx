@@ -1,0 +1,18 @@
+import initTranslations from "@/app/i18n";
+import fs from "fs";
+import path from "path";
+import UsersTable from "./_components/UsersTable";
+
+
+const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
+  const { t } = await initTranslations(locale, ["expo"]);
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">{t("admin_dashboard")}</h1>
+      <UsersTable dataType={"users"} />
+    </div>
+  );
+};
+
+export default Home;

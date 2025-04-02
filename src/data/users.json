@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "images": [
+        "/uploads/co.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "images": [
+        "/uploads/supermarket-groceries-in-the-basket.png"
+      ]
+    }
+  ]
+}
