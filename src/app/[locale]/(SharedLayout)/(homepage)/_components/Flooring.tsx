@@ -93,6 +93,7 @@ function Flooring({ t }: { t: TFunction }) {
         ))}
       </div>
     </div>
+    
   </section>
   );
 }
