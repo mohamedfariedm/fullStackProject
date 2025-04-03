@@ -163,13 +163,11 @@ async function Header({ locale }: { locale: string }) {
                           >
                             {graniteKeys.map((key) => (
                               <li className="menu-item" key={key}>
-                                <a
-                                  href={`about-us.html?name=${encodeURIComponent(
-                                    t(key)
-                                  )}&lang=${locale}`}
+                                <Link
+                                  href={`/products/1`}
                                 >
                                   {t(key)}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
