@@ -6,6 +6,6 @@ export const i18nRouterConfig: {
 } = {
   locales: ["ar", "en","fr","pt"],
   defaultLocale: "en",
-  prefixDefault: false,
+  prefixDefault: true,
   serverSetCookie: "if-empty",
 };

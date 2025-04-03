@@ -118,7 +118,7 @@ async function Header({ locale }: { locale: string }) {
                     <img
                       className="img-fluid logo"
                       style={{ scale: "1.5" }}
-                      src="images/Logo/logo-4.png"
+                      src="/images/Logo/logo-4.png"
                       alt="marblex"
                     />
                   </Link>
