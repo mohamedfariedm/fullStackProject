@@ -1,5 +1,6 @@
 import initTranslations from "@/app/i18n";
 import LanguageChanger from "../LanguageChanger";
+import Link from "next/link";
 
 async function Header({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["common"]);
@@ -113,14 +114,14 @@ async function Header({ locale }: { locale: string }) {
             <div className="row">
               <div className="col-lg-12">
                 <nav className="navbar navbar-expand-lg navbar-light">
-                  <a className="navbar-brand" href="index.html">
+                  <Link className="navbar-brand" href="/">
                     <img
                       className="img-fluid logo"
                       style={{ scale: "1.5" }}
                       src="images/Logo/logo-4.png"
                       alt="marblex"
                     />
-                  </a>
+                  </Link>
 
                   <div
                     className="collapse navbar-collapse"
@@ -129,11 +130,11 @@ async function Header({ locale }: { locale: string }) {
                     <div id="pq-menu-contain" className="pq-menu-contain">
                       <ul id="pq-main-menu" className="navbar-nav ml-auto">
                         <li className="menu-item current-menu-item menu-item-has-children">
-                          <a href="index.html">{t("menuHome")}</a>
+                          <Link href="/">{t("menuHome")}</Link>
                         </li>
 
                         <li className="menu-item menu-item-has-children">
-                          <a href="#">{t("menuEgyptianMarble")}</a>
+                          <Link href="#">{t("menuEgyptianMarble")}</Link>
                           <i className="fa fa-chevron-down pq-submenu-icon"></i>
                           <ul
                             style={{ height: "50vh", overflowY: "scroll" }}
@@ -154,7 +155,7 @@ async function Header({ locale }: { locale: string }) {
                         </li>
 
                         <li className="menu-item menu-item-has-children">
-                          <a href="#">{t("menuEgyptianGranite")}</a>
+                          <Link href="#">{t("menuEgyptianGranite")}</Link>
                           <i className="fa fa-chevron-down pq-submenu-icon"></i>
                           <ul
                             style={{ height: "50vh", overflowY: "scroll" }}
@@ -175,44 +176,44 @@ async function Header({ locale }: { locale: string }) {
                         </li>
 
                         <li className="menu-item menu-item-has-children">
-                          <a href="#">{t("menuPacking")}</a>
+                          <Link href="#">{t("menuPacking")}</Link>
                           <i className="fa fa-chevron-down pq-submenu-icon"></i>
                           <ul
                             className="sub-menu"
                             style={{ maxHeight: "50vh" }}
                           >
                             <li className="menu-item">
-                              <a href={`slabs.html?lang=${locale}`}>
+                              <Link href={`/slabs`}>
                                 {t("slabsPacking")}
-                              </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a href={`tiles.html?lang=${locale}`}>
+                              <Link href={`/tiles`}>
                                 {t("tilesPacking")}
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </li>
 
                         <li className="menu-item">
-                          <a href={`finishes.html?lang=${locale}`}>
+                          <Link href={`/finishes`}>
                             {t("menuFinishes")}
-                          </a>
+                          </Link>
                         </li>
                         <li className="menu-item">
-                          <a href={`factory.html?lang=${locale}`}>
+                          <Link href={`/factory`}>
                             {t("menuFactory")}
-                          </a>
+                          </Link>
                         </li>
                         <li className="menu-item">
-                          <a href={`projects.html?lang=${locale}`}>
+                          <Link href={`/projects`}>
                             {t("menuProjects")}
-                          </a>
+                          </Link>
                         </li>
                         <li className="menu-item">
-                          <a href={`contact-us.html?lang=${locale}`}>
+                          <Link href={`/contact-us`}>
                             {t("menuContact")}
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>

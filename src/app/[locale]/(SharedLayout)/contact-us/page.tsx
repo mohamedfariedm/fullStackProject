@@ -14,11 +14,8 @@ async function page({ params: { locale } }: { params: { locale: string } }) {
 <ContactForm/>
 <LeftPart t={t}/>
 <div className="w-[1440px] h-[70.65%] bg-[url(/assets/images/contact/vector.svg)] bg-cover bg-no-repeat ltr:rotate-y-180 absolute top-[2.4%] rtl:end-1/2 rtl:translate-x-[-50.03%] translate-y-0 z-[1]" />
-
-
   </div>
 </>
-
   );
 }
 

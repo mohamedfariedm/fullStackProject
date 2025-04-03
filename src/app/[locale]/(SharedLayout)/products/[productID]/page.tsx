@@ -9,8 +9,9 @@ async function page({
 
 
   return (
-<Features/>
-  );
+
+"" 
+ );
 }
 
 export default page;
