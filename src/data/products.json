@@ -1,20 +1,180 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "email": "john@example.com",
-      "images": [
-        "/uploads/co.jpg"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Jane Smith",
-      "email": "jane@example.com",
-      "images": [
-        "/uploads/supermarket-groceries-in-the-basket.png"
-      ]
-    }
-  ]
-}
+      "image_array": [
+        "images/pics/Triesta/1.jpg",
+        "images/pics/Triesta/2.jpg",
+        "images/pics/Triesta/3.jpg",
+        "images/pics/Triesta/4.jpg",
+        "images/pics/Triesta/5.jpg",
+        "images/pics/Triesta/6.jpg",
+        "images/pics/Triesta/7.jpg"
+      ],
+      "aboutUs": {
+        "images": ["images/pics/Triesta/6.jpg", "images/pics/Triesta/7.jpg"],
+        "title": {
+          "en": "The Warm Elegance of Sinai Pearl – Triesta",
+          "ar": "أناقة دافئة للؤلؤة سيناء – تريستا",
+          "fr": "L'élégance chaleureuse de la Perle du Sinaï – Triesta",
+          "pt": "A Elegância Calorosa da Pérola do Sinai – Triesta"
+        },
+        "description": {
+          "en": "Sinai Pearl – Triesta offers warmth and elegance, perfect for both classic and modern designs.",
+          "ar": "توفر لؤلؤة سيناء – تريستا الدفء والأناقة، مثالية للتصاميم الكلاسيكية والحديثة.",
+          "fr": "La Perle du Sinaï – Triesta offre chaleur et élégance, parfaite pour les designs classiques et modernes.",
+          "pt": "A Pérola do Sinai – Triesta oferece calor e elegância, perfeita para designs clássicos e modernos."
+        },
+        "features": [
+          {
+            "icon": "flaticon-tile-2",
+            "title": {
+              "en": "Smooth Finish",
+              "ar": "تشطيب ناعم",
+              "pt": "Acabamento Suave",
+              "fr": "Finition Lisse"
+            }
+          },
+          {
+            "icon": "flaticon-modern-art",
+            "title": {
+              "en": "Timeless Appeal",
+              "ar": "جاذبية خالدة",
+              "pt": "Atrativo Atemporal",
+              "fr": "Attrait Intemporel"
+            }
+          }
+        ],
+        "checklist":[
+          {
+            "en": "Ideal for flooring and wall cladding",
+            "ar": "مثالي للأرضيات وتكسية الجدران",
+            "pt": "Ideal para pisos e revestimentos de parede",
+            "fr": "Idéal pour les sols et le revêtement mural"
+          },
+          {
+            "en": "Resistant to wear and tear",
+            "ar": "مقاوم للتآكل والتمزق",
+            "pt": "Resistente ao desgaste",
+            "fr": "Résistant à l'usure"
+          },
+          {
+            "en": "Adds a touch of luxury to interiors",
+            "ar": "يضيف لمسة من الفخامة إلى الديكورات الداخلية",
+            "pt": "Acrescenta um toque de luxo aos interiores",
+            "fr": "Ajoute une touche de luxe aux intérieurs"
+          }
+        ]
+      },
+      "relatedField":[
+        {
+          "name": {
+            "en": "Sinai Pearl – Triesta",
+            "ar": "سيناء بيرل – تريستا",
+            "pt": "Pérola do Sinai – Triesta",
+            "fr": "Perle du Sinaï – Triesta"
+          },
+          "image": "images/pics/Galala/1.jpg",
+          "categorie": {
+            "en": "Sinai",
+            "ar": "سيناء",
+            "pt": "Sinai",
+            "fr": "Sinai"
+          },
+          "url": "about-us.html?name=Sinai%20Pearl%20–%20Triesta"
+        },
+        {
+          "name": {
+            "en": "Galala Beige Marble",
+            "ar": "رخام جلالة بيج",
+            "pt": "Mármore Galala Bege",
+            "fr": "Marbre Galala Beige"
+          },
+          "image": "images/pics/Galala/2.jpg",
+          "categorie": {
+            "en": "Galala",
+            "ar": "جلالة",
+            "pt": "Galala",
+            "fr": "Galala"
+          },
+          "url": "about-us.html?name=Galala%20Beige%20Marble"
+        },
+        {
+          "name": {
+            "en": "Galala Light Marble",
+            "ar": "رخام جلالة لايت",
+            "pt": "Mármore Galala Light",
+            "fr": "Marbre Galala Light"
+          },
+          "image": "images/pics/Sunny/1.jpg",
+          "categorie": {
+            "en": "Galala",
+            "ar": "جلالة",
+            "pt": "Galala",
+            "fr": "Galala"
+          },
+          "url": "about-us.html?name=Galala%20Light%20Marble"
+        },
+        {
+          "name": {
+            "en": "Onyx Marble",
+            "ar": "رخام أونيكس",
+            "pt": "Mármore Ônix",
+            "fr": "Marbre Onyx"
+          },
+          "image": "images/pics/onyex/4.jpg",
+          "categorie": {
+            "en": "Onyx",
+            "ar": "أونيكس",
+            "pt": "Ônix",
+            "fr": "Onyx"
+          },
+          "url": "about-us.html?name=Onyx%20Marble"
+        },
+        {
+          "name": {
+            "en": "Samaha Marble",
+            "ar": "رخام سماحة",
+            "pt": "Mármore Samaha",
+            "fr": "Marbre Samaha"
+          },
+          "image": "images/pics/Samaha/1.jpg",
+          "categorie": {
+            "en": "Samaha",
+            "ar": "سماحة",
+            "pt": "Samaha",
+            "fr": "Samaha"
+          },
+          "url": "about-us.html?name=Samaha%20Marble"
+        },
+        {
+          "name": {
+            "en": "Zafarana Marble",
+            "ar": "رخام زعفرانة",
+            "pt": "Mármore Zafarana",
+            "fr": "Marbre Zafarana"
+          },
+          "image": "images/pics/Zaafrana/1.jpg",
+          "categorie": {
+            "en": "Zaafrana",
+            "ar": "زعفرانة",
+            "pt": "Zaafrana",
+            "fr": "Zaafrana"
+          },
+          "url": "about-us.html?name=Zafarana%20Marble"
+        }
+      ],
+      "name": {
+        "en": "Sinai Pearl – Triesta",
+        "ar": "لؤلؤة سيناء – تريستا",
+        "fr": "Perle du Sinaï – Triesta",
+        "pt": "Pérola do Sinai – Triesta"
+      },
+      "description": {
+        "en": "A premium Egyptian marble with a unique texture.",
+        "ar": "رخام مصري فاخر بملمس فريد.",
+        "fr": "Un marbre égyptien premium avec une texture unique.",
+        "pt": "Um mármore egípcio premium com uma textura única."
+      },
+      "main_image":"images/sinai_pearl_triesta.jpg"
+  }]
+  }
