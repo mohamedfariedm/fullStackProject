@@ -18,13 +18,14 @@ import {
 } from "./_components";
 import { Features } from "@/components/Shared";
 import CofeTrip from "./_components/CofeTrip";
+import { supabase } from "@/lib/supabaseClient";
 
 const getUsers = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/data?type=users`, { cache: "no-store" });
-    if (!response.ok) throw new Error("Failed to fetch users");
-    const result = await response.json();
-    return result.items || [];
+    const { data, error } = await supabase.from("users").select("*");
+
+    if (error) throw error;
+    return data || [];
   } catch (error) {
     console.error("Error fetching users:", error);
     return [];
