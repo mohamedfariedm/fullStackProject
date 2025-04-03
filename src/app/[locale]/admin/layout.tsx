@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../../styles/globals.css";
 
 /* export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,6 @@ export default async function Layout({
     <>
     <div className="overflow-x-hidden">
       {children}
-
     </div>
     </>
   );

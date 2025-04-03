@@ -1,16 +1,17 @@
 import initTranslations from "@/app/i18n";
+import { supabase } from "@/lib/supabaseClient";
 
 const getPRoducts = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/data?type=products`, { cache: "no-store" });
-    if (!response.ok) throw new Error("Failed to fetch users");
-    const result = await response.json();
-    return result.items || [];
+    const { data, error } = await supabase.from("products").select("*");
+    if (error) throw error;
+    return data || [];
   } catch (error) {
     console.error("Error fetching users:", error);
     return [];
   }
 };
+
 async function page({
   params: { locale, productID },
 }: {
@@ -18,7 +19,6 @@ async function page({
 }) {
   const products = await getPRoducts(); // Fetch products
   console.log("productsArray",products[0]);
-
 
 const product=products[0]
   const lang = locale || "en";
@@ -167,7 +167,8 @@ const product=products[0]
         </div>
       </div>
     </section>
-  </>  );
+  </>  
+  );
 }
 
 export default page;

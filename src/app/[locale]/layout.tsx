@@ -2,7 +2,6 @@ import { i18nRouterConfig } from "@/i18nRouterConfig";
 import { dir } from "i18next";
 import type { Metadata } from "next";
 import GlobalProvider from "../../Providers";
-import "../../styles/globals.css";
 import Script from "next/script";
 
 
