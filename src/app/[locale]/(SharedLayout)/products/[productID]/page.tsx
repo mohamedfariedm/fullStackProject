@@ -81,8 +81,8 @@ const product=products[0]
         <div className="row">
           {product.image_array.map((img, idx) => (
             <div key={idx} className="col-lg-4 col-md-6 mt-4">
-              <a href={`/${img}`} target="_blank" rel="noopener noreferrer">
-                <img src={`/${img}`} alt="product gallery" style={{ width: "100%" }} />
+              <a href={`${img}`} target="_blank" rel="noopener noreferrer">
+                <img src={`${img}`} alt="product gallery" style={{ width: "100%" }} />
               </a>
             </div>
           ))}
@@ -95,8 +95,8 @@ const product=products[0]
         <div className="row">
           <div className="col-xl-6">
             <div className="about-us-img">
-              <img src={`/${product.aboutUs.images[0]}`} className="pq-image1" alt="About Us" />
-              <img src={`/${product.aboutUs.images[1]}`} className="pq-image2" alt="About Us 2" />
+              <img src={`${product.aboutUs.images[0]}`} className="pq-image1" alt="About Us" />
+              <img src={`${product.aboutUs.images[1]}`} className="pq-image2" alt="About Us 2" />
             </div>
           </div>
           <div className="col-xl-6 pq-about-us-padding">
@@ -155,7 +155,7 @@ const product=products[0]
                       <p className="portfolio-location">Category: {item.categorie[lang]}</p>
                     </a>
                     <img
-                      src={`/${item.image}`}
+                      src={`${item.image}`}
                       alt={item.name[lang]}
                       className="protfolio-tabs-img"
                     />

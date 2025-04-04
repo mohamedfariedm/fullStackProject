@@ -175,30 +175,96 @@ const ProductsTable = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <Card className="p-4 space-y-4">
           <h2 className="text-xl font-bold">Product Form</h2>
-          <Input {...register("type")} placeholder="Type (e.g. marbel)" />
-
+          <Label>Type</Label>
+          <Controller
+            control={control}
+            name="type"
+            render={({ field }) => (
+              <Select   value={field.value} onValueChange={field.onChange}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select Type" />
+                </SelectTrigger>
+                <SelectContent className="z-50 bg-white border shadow-lg rounded-md p-2 space-y-1 flex">
+                  <SelectItem value="marbel">Egyptian Marble</SelectItem>
+                  <SelectItem value="granite">Egyptian Granite</SelectItem>
+                </SelectContent>
+              </Select>
+            )}
+          />
           {langs.map((lang) => (
-            <div key={lang} className="grid grid-cols-2 gap-4">
+            <div key={lang} className="grid grid-cols-1 gap-4">
+              <Label>{`Name (${lang})`}</Label>
               <Input {...register(`name.${lang}`)} placeholder={`Name (${lang})`} />
+              <Label>{`Description (${lang})`}</Label>
               <Input {...register(`description.${lang}`)} placeholder={`Description (${lang})`} />
+              <Label>{`Meta Title (${lang})`}</Label>
               <Input {...register(`metaTitle.${lang}`)} placeholder={`Meta Title (${lang})`} />
+              <Label>{`Meta Desc (${lang})`}</Label>
               <Input {...register(`metaDescription.${lang}`)} placeholder={`Meta Desc. (${lang})`} />
+              <Label>{`About Title (${lang})`}</Label>
               <Input {...register(`aboutUs.title.${lang}`)} placeholder={`About Title (${lang})`} />
+              <Label>{`About Desc (${lang})`}</Label>
               <Textarea {...register(`aboutUs.description.${lang}`)} placeholder={`About Desc (${lang})`} />
             </div>
           ))}
 
-          <Label>Upload Main Image</Label>
-          <Input type="file" onChange={(e) => handleImageUpload(e, "main_image")} multiple />
+<Label>Upload Main Image</Label>
+<div className="flex gap-2 flex-wrap">
+  {watch("main_image")?.map((img, idx) => (
+    <div key={idx} className="relative">
+      <img src={img} alt="Main" className="w-16 h-16 object-cover rounded" />
+      <Button
+        type="button"
+        size="icon"
+        variant="destructive"
+        className="absolute top-0 right-0 text-xs"
+        onClick={() => setValue("main_image", watch("main_image")?.filter((_, i) => i !== idx))}
+      >
+        <Trash className="w-4 h-4" />
+      </Button>
+    </div>
+  ))}
+</div>
+<Input type="file" onChange={(e) => handleImageUpload(e, "main_image")} multiple />
 
-          <Label>Upload Gallery Images</Label>
-          <Input type="file" onChange={(e) => handleImageUpload(e, "image_array")} multiple />
+<Label>Upload Gallery Images</Label>
+<div className="flex gap-2 flex-wrap">
+  {watch("image_array")?.map((img, idx) => (
+    <div key={idx} className="relative">
+      <img src={img} alt="Gallery" className="w-16 h-16 object-cover rounded" />
+      <Button
+        type="button"
+        size="icon"
+        variant="destructive"
+        className="absolute top-0 right-0 text-xs"
+        onClick={() => setValue("image_array", watch("image_array")?.filter((_, i) => i !== idx))}
+      >
+        <Trash className="w-4 h-4" />
+      </Button>
+    </div>
+  ))}
+</div>
+<Input type="file" onChange={(e) => handleImageUpload(e, "image_array")} multiple />
 
-          {/* About Us Images */}
-          <div className="space-y-2">
-            <Label>About Us Images</Label>
-            <Input type="file" onChange={(e) => handleImageUpload(e, "aboutUs.images")} multiple />
-          </div>
+<Label>About Us Images</Label>
+<div className="flex gap-2 flex-wrap">
+  {watch("aboutUs.images")?.map((img, idx) => (
+    <div key={idx} className="relative">
+      <img src={img} alt="About Us" className="w-16 h-16 object-cover rounded" />
+      <Button
+        type="button"
+        size="icon"
+        variant="destructive"
+        className="absolute top-0 right-0 text-xs"
+        onClick={() => setValue("aboutUs.images", watch("aboutUs.images")?.filter((_, i) => i !== idx))}
+      >
+        <Trash className="w-4 h-4" />
+      </Button>
+    </div>
+  ))}
+</div>
+<Input type="file" onChange={(e) => handleImageUpload(e, "aboutUs.images")} multiple />
+
 
           {/* Checklist Section */}
           <div className="space-y-2">
@@ -273,7 +339,7 @@ const ProductsTable = () => {
                         <SelectTrigger>
                           <SelectValue placeholder="Select icon" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="z-50 bg-white border shadow-lg rounded-md p-2 space-y-1 flex">
                           {iconOptions.map((icon) => (
                             <SelectItem key={icon} value={icon}>
                               {icon}
@@ -333,10 +399,18 @@ const ProductsTable = () => {
                     {...register(`relatedField.${index}.url` as const)}
                     placeholder="URL (e.g. about-us.html?name=Product%20Name)"
                   />
-                  <Input
-                    {...register(`relatedField.${index}.image` as const)}
-                    placeholder="Image path (e.g. images/pics/Category/1.jpg)"
-                  />
+              <Label>Related Product Image</Label>
+<div className="flex gap-2 items-center">
+  <Input type="file" onChange={async (e) => {
+    const files = e.target.files
+    if (!files || !files.length) return
+    const uploaded = await uploadImage(files[0])
+    if (uploaded) setValue(`relatedField.${index}.image`, uploaded)
+  }} />
+  {watch(`relatedField.${index}.image`) && (
+    <img src={watch(`relatedField.${index}.image`)} alt="Preview" className="w-16 h-16 object-cover rounded" />
+  )}
+</div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
