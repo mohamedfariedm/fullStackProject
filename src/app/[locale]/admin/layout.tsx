@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 /* export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default async function Layout({
     <>
     <div className="overflow-x-hidden">
       {children}
+                <Toaster />
     </div>
     </>
   );

@@ -1,0 +1,25 @@
+{
+  "title": "King Stone - Finishes",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Finishes"
+  },
+  "sections": {
+    "finishesTitle": "Finishes",
+    "finishesSubTitle": "Explore Our Finishes",
+    "categories": {
+      "saw-cut": "Saw-Cut",
+      "polished": "Polished",
+      "honed": "Honed",
+      "brushed": "Brushed",
+      "bush-hammered": "Bush Hammered",
+      "acid-wash": "Acid Wash",
+      "scratch": "Scratch",
+      "tumbled": "Tumbled",
+      "stripped": "Stripped",
+      "flamed": "Flamed",
+      "sandblasted": "Sandblasted",
+      "split-face": "Split Face"
+    }
+  }
+}

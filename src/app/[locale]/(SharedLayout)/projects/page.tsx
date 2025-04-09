@@ -8,69 +8,62 @@ type Props = {
 };
 
 function Page({ params: { locale } }: Props) {
-  const { t } = useTranslation("faq");
-
-  // Manage FAQ state (only one can be open at a time)
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex((prev) => (prev === index ? null : index)); // Close if the same, otherwise open
-  };
-
-  // FAQ Questions and Answers from Translation File
-  const faqs = [
-    { question: t("faq_1_question"), answer: t("faq_1_answer") },
-    { question: t("faq_2_question"), answer: t("faq_2_answer") },
-    { question: t("faq_3_question"), answer: t("faq_3_answer") },
-    { question: t("faq_4_question"), answer: t("faq_4_answer") },
-    { question: t("faq_5_question"), answer: t("faq_5_answer") },
-  ];
-
+  const { t } = useTranslation("projects");
   return (
     <>
-      <BreadCrumbComponent t={t} name={t("name")} title={t("title")} description={t("description")} />
+    <BreadCrumbComponent name={t("name")} title={t("title")} description={t("description")} />
 
-      <div className="my-[96px]">
-        <div className="main-container flex justify-end xl:w-[1156.638px] xl:h-[507.139px] relative mx-auto my-0">
-          <div className="flex w-full xl:w-[650px] xl:h-auto flex-col gap-[16px] items-end flex-nowrap z-[3]">
-            {faqs.map((faq, index) => (
-              <div key={index} className="w-full xl:w-[650px] flex flex-col gap-[16px]">
-                {/* Question with toggle icon */}
-                <div className="flex w-full xl:w-[650px] justify-between items-center shrink-0 flex-nowrap relative z-[5]">
-                  <span className="flex w-[80%] xl:w-auto xl:h-[33px] justify-start items-start shrink-0 text-[18px] font-semibold leading-[32.76px] text-[#fff] relative text-start xl:whitespace-nowrap z-[7]">
-                    {faq.question}
-                  </span>
-                  <div
-                    className="w-[24px] h-[24px] shrink-0 bg-cover bg-no-repeat relative z-[6] cursor-pointer"
-                    style={{
-                      backgroundImage: `url(${openIndex === index ? "/assets/images/faq/remove.svg" : "/assets/images/faq/cancel.svg"})`,
-                    }}
-                    onClick={() => toggleFAQ(index)}
-                  />
-                </div>
+{/* Project Description */}
+<div style={{ paddingTop: "30px" }} className="project-description">
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+        <h2 id="name-display-3">
+          <span id="heading">{t("heading")}</span>
+        </h2>
+        <p className="pq-section-description">
+          <span id="description">{t("description")}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-                {/* Answer (Visible only when open) */}
-                {openIndex === index && (
-                  <span className="flex w-full xl:w-[647px] xl:h-auto justify-end items-start shrink-0 text-[18px] font-normal leading-[32.76px] text-[#c4c4c4] relative text-start z-[8]">
-                    {faq.answer}
-                  </span>
-                )}
-
-                {/* Hide separator line for the last item */}
-                {index !== faqs.length - 1 && (
-                  <div className="w-full xl:w-[650px] bg-[#BABABA] h-px shrink-0 bg-cover bg-no-repeat relative z-[9] my-[16px]" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Background Image */}
-          <div
-            className="w-[1074.638px] h-[98.03%] bg-cover ltr:rotate-y-180 bg-no-repeat absolute top-[1.97%] start-0 z-[2]"
-            style={{ backgroundImage: "url(/assets/images/faq/Vector.svg)" }}
-          />
+{/* Projects Gallery */}
+<section className="gallery">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-lg-8 col-md-8">
+        <div className="pq-section-title pq-style-1">
+          <span className="pq-section-sub-title" id="gallery-sub-title">
+            {t("gallery.subTitle")}
+          </span>
+          <h5 className="pq-section-main-title" id="gallery-main-title">
+            {t("gallery.mainTitle")}
+          </h5>
         </div>
       </div>
+      <div className="col-lg-12">
+        <div className="divider pq-left-border pq-45"></div>
+      </div>
+    </div>
+    <div className="row" id="gallery-container">
+      {/* Gallery Images */}
+      {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
+        <div key={num} className="col-lg-4 col-md-6 mt-4">
+          <a href={`/images/pics/projects/${num}.jpeg`}>
+            <img
+              src={`/images/pics/projects/${num}.jpeg`}
+              style={{ width: "100%", height: "50vh" }}
+              alt={`Project ${num}`}
+            />
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
     </>
   );
 }

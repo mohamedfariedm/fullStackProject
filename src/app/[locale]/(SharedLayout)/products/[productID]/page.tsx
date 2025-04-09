@@ -19,6 +19,7 @@ async function page({
 }) {
   const products = await getPRoducts(); // Fetch products
   console.log("productsArray",products[0]);
+  console.log("productsslug",productID);
 
 const product=products[0]
   const lang = locale || "en";

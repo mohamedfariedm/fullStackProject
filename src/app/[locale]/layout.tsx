@@ -62,7 +62,7 @@ export default async function RootLayout({
     <Script src="/js/bootstrap.min.js"></Script>
     <Script src="/js/owl.carousel.min.js"></Script>
     <Script src="/js/progressbar.js"></Script>
-
+    <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></Script>
     <Script src="/js/isotope.pkgd.min.js"></Script>
     <Script src="/js/jquery.countTo.min.js"></Script>
     <Script src="/js/wow.min.js"></Script>

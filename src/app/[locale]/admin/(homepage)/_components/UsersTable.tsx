@@ -131,7 +131,8 @@ const ProductsTable = () => {
       if (error) toast.error("Failed to update")
       else toast.success("Updated")
     } else {
-      const { error } = await supabase.from("products").insert(values)
+      const { id, ...rest } = values
+      const { error } = await supabase.from("products").insert(rest)
       if (error) toast.error("Failed to insert")
       else toast.success("Inserted")
     }
@@ -169,7 +170,15 @@ const ProductsTable = () => {
     "flaticon-polish",
     "flaticon-quality",
   ]
-
+// Sort and group products by type
+const grouped = products.reduce(
+  (acc, item) => {
+    if (item.type === "granite") acc.granite.push(item)
+    else acc.marble.push(item)
+    return acc
+  },
+  { granite: [], marble: [] }
+)
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -435,9 +444,11 @@ const ProductsTable = () => {
         </Card>
       </form>
 
+      <div className="space-y-8">
+    {grouped.granite.length > 0 && (
       <div className="space-y-4">
-        <h2 className="text-xl font-bold">Products</h2>
-        {products.map((item) => (
+        <h2 className="text-2xl font-semibold">Egyptian Granite</h2>
+        {grouped.granite.map((item) => (
           <Card key={item.id} className="p-4 space-y-2">
             <p className="font-bold">{item.name?.en}</p>
             <p className="text-sm text-muted-foreground">{item.description?.en}</p>
@@ -458,6 +469,34 @@ const ProductsTable = () => {
           </Card>
         ))}
       </div>
+    )}
+
+    {grouped.marble.length > 0 && (
+      <div className="space-y-4">
+        <h2 className="text-2xl font-semibold">Egyptian Marble</h2>
+        {grouped.marble.map((item) => (
+          <Card key={item.id} className="p-4 space-y-2">
+            <p className="font-bold">{item.name?.en}</p>
+            <p className="text-sm text-muted-foreground">{item.description?.en}</p>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  reset(item)
+                  setEditing(true)
+                }}
+              >
+                Edit
+              </Button>
+              <Button variant="destructive" onClick={() => deleteProduct(item.id)}>
+                Delete
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
+    )}
+  </div>
     </div>
   )
 }

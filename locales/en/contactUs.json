@@ -1,38 +1,26 @@
 {
+  "breadcrumb": {
     "home": "Home",
-    "name": "Contact Us",
-    "title": "Contact Us",
-    "description": "We are here to serve you! If you have any questions or feedback, don't hesitate to reach out to us. We are always happy to hear from you.", 
-  "breadCrumb": "Contact Us",
-  "form": {
-    "firstName": "First Name",
-    "firstNamePlaceholder": "Enter your first name",
-    "lastName": "Last Name",
-    "lastNamePlaceholder": "Enter your last name",
-    "email": "Email",
-    "phone": "Phone Number",
-    "phonePlaceholder": "+966 5XXXXXXXX",
-    "message": "Message",
-    "messagePlaceholder": "Leave us a message...",
-    "submit": "Send",
-    "sending": "Sending..."
-  },
-  "successMessage": "Message sent successfully!",
-  "errorMessage": "An error occurred while sending. Please try again.",
-  "validation": {
-    "firstName": "First name is required",
-    "lastName": "Last name is required",
-    "emailRequired": "Email is required",
-    "emailInvalid": "Please enter a valid email address",
-    "phoneRequired": "Phone number is required",
-    "phoneInvalid": "Please enter a valid Saudi phone number",
-    "message": "Message is required"
+    "current": "Contact Us"
   },
   "contact": {
-    "phone": "+2 000-111-2222",
-    "working_hours": "Working hours: Sunday to Thursday, 9 AM to 5 PM.",
-    "email": "info@nondacoffee.com",
-    "response_time": "Response within 24 hours.",
-    "support_message": "Feel free to contact us for more information or support."
+    "title": "Contact Us",
+    "getInTouch": "Get in touch with us",
+    "description": "King Stone Marble & Granite is a leading provider of premium marble and granite, offering a wide range of exquisite designs and types to suit all your needs. With an unwavering commitment to quality and craftsmanship, we take pride in transforming natural stone into timeless works of art. Our extensive collection features diverse patterns, colors, and finishes, perfect for enhancing residential, commercial, and industrial spaces.",
+    "visitOffice": "Visit A Office",
+    "officeAddress": "King Stone, Cairo, Egypt",
+    "contactUs": "Contact-Us",
+    "phoneNumber": "+201271823154",
+    "phoneNumber1": "+201094629316",
+    "emailUs": "Email-Us",
+    "emailAddress": "info@kingstone-eg.com",
+    "helpTitle": "How Can We Help You ?",
+    "helpDescription": "Please feel free to get in touch using the form below. We’d love to hear from you.",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Phone Number",
+    "scopePlaceholder": "Project Scope",
+    "messagePlaceholder": "Write Your Message",
+    "sendNow": "SEND NOW"
   }
 }

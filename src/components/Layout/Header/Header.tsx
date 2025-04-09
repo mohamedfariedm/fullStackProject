@@ -1,43 +1,34 @@
 import initTranslations from "@/app/i18n";
 import LanguageChanger from "../LanguageChanger";
 import Link from "next/link";
+import { supabase } from "@/lib/supabaseClient";
 
+const getPRoducts = async () => {
+  try {
+    const { data, error } = await supabase.from("products").select("*");
+    if (error) throw error;
+    return data || [];
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    return [];
+  }
+};
 async function Header({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["common"]);
+  const products = await getPRoducts(); // Fetch products
+  console.log("productsArray",products);
+// Sort and group products by type and extract keys
+const grouped = products.reduce(
+  (acc, item) => {
+    const key = item.name?.en?.replace(/\s+/g, "").toLowerCase() || "unknown"
+    if (item.type === "granite") acc.granite.push({ ...item, key })
+    else acc.marble.push({ ...item, key })
+    return acc
+  },
+  { granite: [], marble: [] }
+)
+console.log(grouped.marble, grouped.granite);
 
-  const marbleKeys = [
-    "sinaiPearl",
-    "galalaBeige",
-    "galalaLight",
-    "fletto",
-    "sinaiPearlGray",
-    "sunnyMenia",
-    "goldenCream",
-    "silviaMenia",
-    "sunnyLight",
-    "sunnyDark",
-    "millyGray",
-    "millyBrown",
-    "samaha",
-    "katreen",
-    "khatmya",
-    "zafarana",
-  ];
-
-  const graniteKeys = [
-    "biancoHalayeb",
-    "blackaswan",
-    "gandola",
-    "newHalayeb",
-    "rosaHodi",
-    "redAswan",
-    "rosaElnasr",
-    "redForsan",
-    "verdyGazal",
-    "redSafaga",
-    "rozita",
-    "rosaKatreen",
-  ];
 
   return (
     <>
@@ -119,7 +110,7 @@ async function Header({ locale }: { locale: string }) {
                       className="img-fluid logo"
                       style={{ scale: "1.5" }}
                       src="/images/Logo/logo-4.png"
-                      alt="marblex"
+                      alt="kingStoneMarbleGranite"
                     />
                   </Link>
 
@@ -140,14 +131,12 @@ async function Header({ locale }: { locale: string }) {
                             style={{ height: "50vh", overflowY: "scroll" }}
                             className="sub-menu"
                           >
-                            {marbleKeys.map((key) => (
-                              <li className="menu-item" key={key}>
+                            {grouped.marble.map((one:any) => (
+                              <li className="menu-item" key={one.key}>
                                 <a
-                                  href={`about-us.html?name=${encodeURIComponent(
-                                    t(key)
-                                  )}&lang=${locale}`}
+                                  href={`/products/${one.key}`}
                                 >
-                                  {t(key)}
+                                  {one.name[locale]}
                                 </a>
                               </li>
                             ))}
@@ -161,12 +150,12 @@ async function Header({ locale }: { locale: string }) {
                             style={{ height: "50vh", overflowY: "scroll" }}
                             className="sub-menu"
                           >
-                            {graniteKeys.map((key) => (
-                              <li className="menu-item" key={key}>
+                            {grouped.marble.map((all:any) => (
+                              <li className="menu-item" key={all.key}>
                                 <Link
-                                  href={`/products/1`}
+                                  href={`/products/${all.key}`}
                                 >
-                                  {t(key)}
+                                  {all.name[locale]}
                                 </Link>
                               </li>
                             ))}

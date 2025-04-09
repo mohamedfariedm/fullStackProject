@@ -15,7 +15,7 @@ async function page({ params: { locale } }: props) {
 
   return (
     <>
-      <BreadCrumbComponent t={t} name={t("name")} title={t("title")} description={t("description")} />
+      <BreadCrumbComponent  name={t("name")} title={t("title")} description={t("description")} />
 
       {/* Section 1 */}
       <div className="main-container w-full max-w-[1440px] relative mx-auto px-4">

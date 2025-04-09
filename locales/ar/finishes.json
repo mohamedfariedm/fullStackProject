@@ -1,0 +1,26 @@
+{
+    "title": "كينج ستون - التشطيبات",
+    "breadcrumb": {
+      "home": "الرئيسية",
+      "current": "التشطيبات"
+    },
+    "sections": {
+      "finishesTitle": "التشطيبات",
+      "finishesSubTitle": "استكشف تشطيباتنا",
+      "categories": {
+        "saw-cut": "قطع المنشار",
+        "polished": "مصقول",
+        "honed": "مشحوذ",
+        "brushed": "مفرش",
+        "bush-hammered": "مطروق",
+        "acid-wash": "غسيل حمضي",
+        "scratch": "مخدوش",
+        "tumbled": "متدحرج",
+        "stripped": "مجرد",
+        "flamed": "ملهب",
+        "sandblasted": "منفوخ بالرمل",
+        "split-face": "وجه مقسم"
+      }
+    }
+  }
+  
