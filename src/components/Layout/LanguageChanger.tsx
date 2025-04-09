@@ -38,6 +38,7 @@ export default function LanguageChanger() {
 
     i18n.changeLanguage(newLocale);
     router.push(newPath);
+    window.location.reload();
     setOpen(false);
   };
 
