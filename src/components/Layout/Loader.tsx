@@ -14,7 +14,11 @@ function Loader({
   return (
     <div id="pq-loading">
       <div id="pq-loading-center">
-        <img style={{scale: "1.5"}} src="images/Logo/logo-4.png" alt="Loading" />
+        <img
+          style={{ scale: "1.5" }}
+          src="/images/Logo/logo-4.png"
+          alt="Loading"
+        />
       </div>
     </div>
   );
