@@ -9,7 +9,6 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">{t("admin_dashboard")}</h1>
       <UsersTable />
     </div>
   );

@@ -1,4 +1,6 @@
 import { supabase } from "@/lib/supabaseClient";
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 
 export async function generateStaticParams() {
     const { data: products, error } = await supabase.from("products").select("name");

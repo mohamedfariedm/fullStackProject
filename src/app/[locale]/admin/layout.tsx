@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/NavbarAdmin";
 
 /* export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,11 +17,18 @@ export default async function Layout({
   params: { locale: string };
 }) {
   return (
-    <>
-    <div className="overflow-x-hidden">
-      {children}
-                <Toaster />
+<div
+style={{overflowY: "hidden", height: "100%"}}
+className="flex overflow-hidden">
+      <Sidebar />
+      <div
+      style={{overflowY: "hidden"}}
+      className="flex-1 flex flex-col  ">
+        <Navbar />
+        <main className="p-6 overflow-y-auto bg-gray-100 flex-grow">
+          {children}
+        </main>
+      </div>
     </div>
-    </>
   );
 }

@@ -16,6 +16,7 @@ import { supabase } from "@/lib/supabaseClient"
 import { toast } from "sonner"
 import { Plus, Trash } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import TextEditor from "@/components/TextEditor"
 
 const langs = ["en", "ar", "fr", "pt"]
 
@@ -200,22 +201,43 @@ const grouped = products.reduce(
               </Select>
             )}
           />
+          <div>
           {langs.map((lang) => (
-            <div key={lang} className="grid grid-cols-1 gap-4">
+            <div key={lang} className="grid grid-cols-1 gap-4 py-5">
               <Label>{`Name (${lang})`}</Label>
               <Input {...register(`name.${lang}`)} placeholder={`Name (${lang})`} />
               <Label>{`Description (${lang})`}</Label>
-              <Input {...register(`description.${lang}`)} placeholder={`Description (${lang})`} />
-              <Label>{`Meta Title (${lang})`}</Label>
+              <Controller
+                control={control}
+                name={`description.${lang}` as const}
+                render={({ field }) => (
+                  <TextEditor
+                    value={field.value || ""}
+                    onChange={field.onChange}
+                  />
+                )}
+              />
+              <Label className="mt-5">{`Meta Title (${lang})`}</Label>
               <Input {...register(`metaTitle.${lang}`)} placeholder={`Meta Title (${lang})`} />
               <Label>{`Meta Desc (${lang})`}</Label>
-              <Input {...register(`metaDescription.${lang}`)} placeholder={`Meta Desc. (${lang})`} />
+              <Textarea {...register(`metaDescription.${lang}`)} placeholder={`Meta Desc. (${lang})`} />
               <Label>{`About Title (${lang})`}</Label>
               <Input {...register(`aboutUs.title.${lang}`)} placeholder={`About Title (${lang})`} />
               <Label>{`About Desc (${lang})`}</Label>
-              <Textarea {...register(`aboutUs.description.${lang}`)} placeholder={`About Desc (${lang})`} />
-            </div>
+              <Controller
+                control={control}
+                name={`aboutUs.description.${lang}` as const}
+                render={({ field }) => (
+                  <TextEditor
+                    value={field.value || ""}
+                    onChange={field.onChange}
+                  />
+                )}
+              /> 
+           </div>
           ))}
+
+          </div>
 
 <Label>Upload Main Image</Label>
 <div className="flex gap-2 flex-wrap">
@@ -454,7 +476,7 @@ const grouped = products.reduce(
             <p className="text-sm text-muted-foreground">{item.description?.en}</p>
             <div className="flex gap-2">
               <Button
-                variant="outline"
+                variant="default"
                 onClick={() => {
                   reset(item)
                   setEditing(true)
@@ -480,7 +502,7 @@ const grouped = products.reduce(
             <p className="text-sm text-muted-foreground">{item.description?.en}</p>
             <div className="flex gap-2">
               <Button
-                variant="outline"
+                variant="default"
                 onClick={() => {
                   reset(item)
                   setEditing(true)
