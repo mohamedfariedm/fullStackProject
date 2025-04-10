@@ -1,8 +1,8 @@
+"use client";
 
 import initTranslations from '@/app/i18n';
 import { BreadCrumbComponent } from '@/components/Animations/breadCrumb';
-export const dynamic = "force-dynamic";
-export const revalidate = 60; // seconds
+
  async function Page({ params: { locale } }: { params: { locale: string } }) {
   const { t } = await initTranslations(locale, ['contactUs']);
 
