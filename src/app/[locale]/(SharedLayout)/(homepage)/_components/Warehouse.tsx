@@ -45,7 +45,7 @@ function Warehouse({ t }: { t: TFunction }) {
         </div>
         <div className="col-lg-4 col-md-4 wow animated fadeInLeft">
           <div className="button-align">
-            <Link href="finishes.html" className="pq-button pq-button-flat">
+            <Link href="finishes" className="pq-button pq-button-flat">
               <div className="pq-button-block">
                 <span className="pq-button-text">{t("viewMore")}</span>
                 <span className="pq-button-line-right"></span>

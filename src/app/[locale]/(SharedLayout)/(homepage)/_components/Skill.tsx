@@ -17,7 +17,7 @@ function Skill({ t }: { t: TFunction }) {
               <h5 className="pq-section-main-title">{t("skill.skillMainTitle")}</h5>
               <p className="pq-section-description">{t("skill.skillDescription")}</p>
             </div>
-            <a className="pq-button pq-button-flat" href="contact-us.html">
+            <a className="pq-button pq-button-flat" href="contact-us">
               <div className="pq-button-block">
                 <span className="pq-button-text">{t("skill.contactUsButton")}</span>
                 <span className="pq-button-line-right"></span>

@@ -102,7 +102,7 @@ const Hero = ({ t }: { t: TFunction }) => {
               <a
                 id="slider-13-slide-43-layer-4"
                 className="rs-layer pq-button pq-button-flat pq-btn-font rev-btn"
-                href="contact-us.html"
+                href="contact-us"
                 target="_self"
                 data-type="button"
                 data-rsp_ch="on"
@@ -260,7 +260,7 @@ const Hero = ({ t }: { t: TFunction }) => {
               <a
                 id="slider-13-slide-45-layer-4"
                 className="rs-layer pq-button pq-button-flat pq-btn-font rev-btn"
-                href="contact-us.html"
+                href="contact-us"
                 target="_self"
                 data-type="button"
                 data-rsp_ch="on"

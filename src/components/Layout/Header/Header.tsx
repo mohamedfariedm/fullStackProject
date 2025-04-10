@@ -132,9 +132,9 @@ console.log(grouped.marble, grouped.granite);
                             className="sub-menu"
                           >
                             {grouped.marble.map((one:any) => (
-                              <li className="menu-item" key={one.key}>
+                              <li className="menu-item" key={one.name.en}>
                                 <a
-                                  href={`/products/${one.key}`}
+                                  href={`/products/${one.name.en.toLowerCase().trim()}`}
                                 >
                                   {one.name[locale]}
                                 </a>
@@ -150,10 +150,10 @@ console.log(grouped.marble, grouped.granite);
                             style={{ height: "50vh", overflowY: "scroll" }}
                             className="sub-menu"
                           >
-                            {grouped.marble.map((all:any) => (
-                              <li className="menu-item" key={all.key}>
+                            {grouped.granite.map((all:any) => (
+                              <li className="menu-item" key={all.name.en}>
                                 <Link
-                                  href={`/products/${all.key}`}
+                                  href={`/products/${all.name.en.toLowerCase().trim()}`}
                                 >
                                   {all.name[locale]}
                                 </Link>
