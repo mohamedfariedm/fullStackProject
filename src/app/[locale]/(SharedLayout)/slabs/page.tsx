@@ -2,6 +2,8 @@ import React from "react";
 import initTranslations from "@/app/i18n";
 import { Metadata } from "next";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { t } = await initTranslations(params.locale, ["slabs"]);

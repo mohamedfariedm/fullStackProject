@@ -19,7 +19,8 @@ import {
 import { Features } from "@/components/Shared";
 import CofeTrip from "./_components/CofeTrip";
 import { supabase } from "@/lib/supabaseClient";
-
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 const getUsers = async () => {
   try {
     const { data, error } = await supabase.from("users").select("*");

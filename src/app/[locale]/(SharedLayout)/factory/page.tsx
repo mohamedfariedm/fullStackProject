@@ -1,6 +1,7 @@
 import initTranslations from "@/app/i18n";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
-
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 type props = {
   params: { locale: string };
 };

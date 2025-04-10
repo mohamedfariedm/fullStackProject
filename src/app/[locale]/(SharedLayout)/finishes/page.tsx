@@ -1,4 +1,3 @@
-"use client"
 
 import { useEffect, useState } from "react"
 import "swiper/css"
@@ -9,6 +8,8 @@ import { useTranslation } from "react-i18next"
 import FinishesSlider from "@/components/finishes-slider"
 import "./finishes.css"
 
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 type Props = {
   params: { locale: string }
 }

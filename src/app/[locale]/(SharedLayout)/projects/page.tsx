@@ -1,8 +1,7 @@
-"use client";
-import React, { useState } from "react";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
 import { useTranslation } from "react-i18next";
-
+export const dynamic = "force-dynamic";
+export const revalidate = 60; // seconds
 type Props = {
   params: { locale: string };
 };
