@@ -1,13 +1,13 @@
+import initTranslations from "@/app/i18n";
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb";
-import { useTranslation } from "react-i18next";
 export const dynamic = "force-dynamic";
 export const revalidate = 60; // seconds
 type Props = {
   params: { locale: string };
 };
 
-function Page({ params: { locale } }: Props) {
-  const { t } = useTranslation("projects");
+async function Page({ params: { locale } }: Props) {
+  const { t } = await initTranslations(locale, ["projects"]);
   return (
     <>
     <BreadCrumbComponent name={t("name")} title={t("title")} description={t("description")} />

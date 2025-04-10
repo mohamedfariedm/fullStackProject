@@ -1,4 +1,3 @@
-"use client";
 
 import initTranslations from '@/app/i18n';
 import { BreadCrumbComponent } from '@/components/Animations/breadCrumb';

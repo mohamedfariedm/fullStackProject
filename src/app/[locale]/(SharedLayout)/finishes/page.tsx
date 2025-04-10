@@ -1,10 +1,5 @@
-
-import { useEffect, useState } from "react"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
 import { BreadCrumbComponent } from "@/components/Animations/breadCrumb"
-import { useTranslation } from "react-i18next"
+import initTranslations from "@/app/i18n";
 import FinishesSlider from "@/components/finishes-slider"
 import "./finishes.css"
 
@@ -14,8 +9,8 @@ type Props = {
   params: { locale: string }
 }
 
-export default function FinishesPage({ params: { locale } }: Props) {
-  const { t } = useTranslation("finishes");
+export default async function FinishesPage({ params: { locale } }: Props) {
+  const { t } = await initTranslations(locale,["finishes"]);
 
 
 
