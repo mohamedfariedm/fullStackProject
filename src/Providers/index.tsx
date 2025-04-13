@@ -30,7 +30,6 @@ export default async function GlobalProvider({
           resources={resources}
         >
             {children}{" "}
-          <Toaster />
         </ClientComponentsTranslationsProvider>
       </ThemeProvider>
     </>

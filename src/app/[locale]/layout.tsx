@@ -3,6 +3,7 @@ import { dir } from "i18next";
 import type { Metadata } from "next";
 import GlobalProvider from "../../Providers";
 import Script from "next/script";
+import { Toaster } from "sonner";
 
 
 
@@ -57,6 +58,8 @@ export default async function RootLayout({
       <body className="bukra">
         <main className="w-full">
           <GlobalProvider locale={locale}>{children}</GlobalProvider>
+                    <Toaster />
+          
         </main>
         <Script src="/js/jquery.min.js"></Script>
     <Script src="/js/bootstrap.min.js"></Script>

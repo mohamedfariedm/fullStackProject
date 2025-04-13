@@ -473,7 +473,7 @@ const grouped = products.reduce(
         {grouped.granite.map((item) => (
           <Card key={item.id} className="p-4 space-y-2">
             <p className="font-bold">{item.name?.en}</p>
-            <p className="text-sm text-muted-foreground">{item.description?.en}</p>
+            {/* <p className="text-sm text-muted-foreground">{item.description?.en}</p> */}
             <div className="flex gap-2">
               <Button
                 variant="default"
@@ -499,7 +499,7 @@ const grouped = products.reduce(
         {grouped.marble.map((item) => (
           <Card key={item.id} className="p-4 space-y-2">
             <p className="font-bold">{item.name?.en}</p>
-            <p className="text-sm text-muted-foreground">{item.description?.en}</p>
+            {/* <p className="text-sm text-muted-foreground">{item.description?.en}</p> */}
             <div className="flex gap-2">
               <Button
                 variant="default"
