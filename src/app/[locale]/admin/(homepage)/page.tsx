@@ -1,6 +1,4 @@
 import initTranslations from "@/app/i18n";
-import fs from "fs";
-import path from "path";
 import UsersTable from "./_components/UsersTable";
 
 
