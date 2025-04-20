@@ -20,6 +20,16 @@ export default async function FinishesPage({ params: { locale } }: Props) {
       <BreadCrumbComponent
         title={t("breadcrumb.current")}
         name={t("breadcrumb.current")}
+        data={[
+         "/images/pics/finishes/polished/1.jpg",
+         "/images/pics/finishes/polished/2.gif",
+         "/images/pics/finishes/polished/3.jpg",
+         "/images/pics/finishes/polished/4.jpg",
+          "/images/pics/finishes/polished/5.jpeg",
+          "/images/pics/finishes/polished/6.jpeg",
+          "/images/pics/finishes/polished/7.jpg",
+          "/images/pics/finishes/polished/8.webp",
+        ]}
         links={[
           { title: t("breadcrumb.home"), url: "/" },
           { title: t("breadcrumb.current"), url: `/${locale}/finishes` },

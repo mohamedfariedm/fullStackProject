@@ -23,6 +23,7 @@ export default async function SlabsPage({ params: { locale } }: { params: { loca
             name={t('breadcrumb.current')}
             title={t('contact.title')}
             description={t('contact.description')}
+            data={images}
           />
       {/* Project Description */}
       <div style={{ paddingTop: 90 }} className="project-description">

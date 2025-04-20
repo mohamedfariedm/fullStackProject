@@ -1,16 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
-const BreadCrumb: React.FC<{
+import { useState, useEffect } from 'react';
+
+function BreadCrumb({
+  product,
+  className,
+  lang = "en",
+}: {
+  product: any;
   className?: string;
-   name:string,
-   name2?:string,
-   title:string,
-   data?:string[],
-   links?: Array<{ title: string; url: string }>,
-   description?:string
-}> = ({ className,name,title,description,name2,links,data}) => {
+  lang?: string;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0); // Track the current image index
-  const images = data||["/images/Breadcrumb/4.jpeg"] // Default to product.main_image if no image array
+  const images = product.image_array || [product.main_image]; // Default to product.main_image if no image array
 
   // Function to automatically change the image every 3000ms
   useEffect(() => {
@@ -35,17 +36,18 @@ const BreadCrumb: React.FC<{
           <div className="col-lg-12">
             <nav aria-label="breadcrumb">
               <div className="pq-breadcrumb-title">
-                <h1 id="breadcrumb-title">{name}</h1>
+                <h1 id="name-display-2">{product.name[lang]}</h1>
               </div>
               <div className="pq-breadcrumb-container">
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <a href="/" id="breadcrumb-home">
-                      <i className="fas fa-home me-2"></i>Home
+                    <a href="/">
+                      <i className="fas fa-home me-2"></i>
+                      <span>Home</span>
                     </a>
                   </li>
-                  <li className="breadcrumb-item active" id="breadcrumb-current">
-                    {name}
+                  <li id="name-display-1" className="breadcrumb-item active">
+                    {product.name[lang]}
                   </li>
                 </ol>
               </div>
@@ -55,6 +57,6 @@ const BreadCrumb: React.FC<{
       </div>
     </div>
   );
-};
+}
 
-export const BreadCrumbComponent = React.memo(BreadCrumb);
+export default BreadCrumb;

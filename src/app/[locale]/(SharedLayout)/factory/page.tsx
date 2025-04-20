@@ -12,7 +12,7 @@ async function Page({ params: { locale } }: props) {
   return (
     <>
       <div className="p-2 xl:p-0">
-      <BreadCrumbComponent  name={t("name")} title={t("title")} description={t("description")} />
+      <BreadCrumbComponent data={["/images/pics/faqtory/1.png","/images/pics/faqtory/fac.jpeg","/images/pics/faqtory/2.jpg","/images/pics/faqtory/3.jpeg"]}  name={t("name")} title={t("title")} description={t("description")} />
       
       <section className="gallery">
       <div className="container">

@@ -8,9 +8,11 @@ type Props = {
 
 async function Page({ params: { locale } }: Props) {
   const { t } = await initTranslations(locale, ["projects"]);
+  const imagePaths = Array.from({ length: 12 }, (_, i) => `/images/pics/projects/${i + 1}.jpeg`);
+
   return (
     <>
-    <BreadCrumbComponent name={t("name")} title={t("title")} description={t("description")} />
+    <BreadCrumbComponent data={imagePaths} name={t("name")} title={t("title")} description={t("description")} />
 
 {/* Project Description */}
 <div style={{ paddingTop: "30px" }} className="project-description">

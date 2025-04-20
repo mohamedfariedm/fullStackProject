@@ -2,7 +2,7 @@ import { supabase } from "@/lib/supabaseClient";
 import initTranslations from "@/app/i18n";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-
+import BreadCrumb from "./_components/BreadCrumb";
 export const dynamic = "force-dynamic";
 export const revalidate = 60; // seconds
 
@@ -60,6 +60,7 @@ export default async function ProductPage({
 }) {
   const lang = locale || "en";
   const product = await getProductBySlug(productID);
+console.log("Product:", product);
 
   if (!product) {
     return notFound(); // Handle not found clearly
@@ -67,40 +68,14 @@ export default async function ProductPage({
 
   return (
     <>
-    <div className="pq-breadcrumb">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-lg-12">
-            <nav aria-label="breadcrumb">
-              <div className="pq-breadcrumb-title">
-                <h1 id="name-display-2">{product.name[lang]}</h1>
-              </div>
-              <div className="pq-breadcrumb-container">
-                <ol className="breadcrumb">
-                  <li className="breadcrumb-item">
-                    <a href="/">
-                      <i className="fas fa-home me-2"></i>
-                      <span>Home</span>
-                    </a>
-                  </li>
-                  <li id="name-display-1" className="breadcrumb-item active">
-                    {product.name[lang]}
-                  </li>
-                </ol>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+    <BreadCrumb product={product} lang={lang} />
+
 
     <section>
       <div className="container">
         <div className="row">
           <div className="mt-4 mt-lg-0">
-            <h5 className="pq-section-main-title">Choose</h5>
-            <h2 id="name-display-3">{product.name[lang]}</h2>
-            <h5 className="pq-section-main-title">at your home</h5>
+            <h2 style={{marginBottom: "30px"}} id="name-display-3 mb-4">{product.name[lang]}</h2>
             <div
   className="rich-text-content"
   dangerouslySetInnerHTML={{ __html: product.description[lang] }}
